@@ -1,17 +1,21 @@
 {
-  "name": "plinth-template",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "typecheck": "tsc --noEmit",
+    "plinth:check": "plinth check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.25"
+    "next": "15.5.25",
+    "@plinth/core": "file:vendor/plinth-core-0.1.0.tgz"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -22,6 +26,9 @@
     "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.25",
-    "@eslint/eslintrc": "^3"
-  }
+    "@eslint/eslintrc": "^3",
+    "@plinth/check": "file:vendor/plinth-check-0.1.0.tgz",
+    "prettier": "^3.6.0"
+  },
+  "packageManager": "pnpm@9.15.9"
 }

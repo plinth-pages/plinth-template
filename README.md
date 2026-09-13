@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
-
-First, run the development server:
+Built with [Plinth](https://plinth.dev). This is a normal Next.js app — the code is yours.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev          # http://localhost:3100
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things are
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path                             | What                                                                                |
+| -------------------------------- | ----------------------------------------------------------------------------------- |
+| `content/`                       | Everything the page says: profile, projects, career, skills, theme                  |
+| `components/sections/`           | The sections — plain React and Tailwind, edit freely                                |
+| `app/page.tsx`, `app/layout.tsx` | Page composition, including the `<Slot>` elements                                   |
+| `plinth.json`                    | Which integrations are installed and where. Managed by Plinth — don't edit by hand. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Slots
 
-## Learn More
+`<Slot name="…">` marks where integrations (LeetCode stats, a contact form, …) appear. You can move
+sections around and restyle anything, but keep every slot exactly once and leave its contents to
+Plinth. `pnpm plinth:check` verifies this, and CI runs it on every push.
 
-To learn more about Next.js, take a look at the following resources:
+## Checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm plinth:check   # slot contract
+pnpm format:check   # formatting
+pnpm typecheck
+pnpm build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### For Plinth maintainers
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This repository must be marked as a **GitHub template repository** — portfolios are generated from it.
+- **Never add integration-specific code here.** The codemod's duplicate guard only recognises its own
+  markers; a hand-added line plus an injected one breaks every new portfolio.
+- `@plinth/core` and `@plinth/check` are installed from `vendor/*.tgz` until they are published to npm.
+  After publishing, replace the `file:` specifiers in `package.json` with versions and delete `vendor/`.
+- `vercel.json` disables deployments from the `draft` branch. Confirm the key against Vercel's current
+  project configuration before Phase 6 (verification gate G3).

@@ -12,13 +12,13 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
+    // Avatars and images come from URLs the owner or co-pilot writes into content/ — arbitrary hosts
+    // that next/image's remotePatterns cannot enumerate ahead of time.
+    files: ["components/sections/**/*.tsx"],
+    rules: { "@next/next/no-img-element": "off" },
+  },
+  {
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
   },
 ];
 
