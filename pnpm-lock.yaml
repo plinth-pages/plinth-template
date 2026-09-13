@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@plinth/core':
-        specifier: file:vendor/plinth-core-0.1.0.tgz
-        version: file:vendor/plinth-core-0.1.0.tgz(react@19.1.0)
+      '@plinth-pages/core':
+        specifier: file:vendor/plinth-pages-core-0.1.0.tgz
+        version: file:vendor/plinth-pages-core-0.1.0.tgz(react@19.1.0)
       next:
         specifier: 15.5.25
         version: 15.5.25(@types/node@20.19.43)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -24,9 +24,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.3.7
-      '@plinth/check':
-        specifier: file:vendor/plinth-check-0.1.0.tgz
-        version: file:vendor/plinth-check-0.1.0.tgz(@plinth/core@file:vendor/plinth-core-0.1.0.tgz(react@19.1.0))
+      '@plinth-pages/check':
+        specifier: file:vendor/plinth-pages-check-0.1.0.tgz
+        version: file:vendor/plinth-pages-check-0.1.0.tgz(@plinth-pages/core@file:vendor/plinth-pages-core-0.1.0.tgz(react@19.1.0))
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.3.3
@@ -370,15 +370,15 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@plinth/check@file:vendor/plinth-check-0.1.0.tgz':
-    resolution: {integrity: sha512-WRmXdthkHhST9pnCDpuAEAbEw9iEkevbt592lKbVB8oenFBRl2WWxqzLe0txIoXbw6YqMvg0a79uBBEPwZqzfw==, tarball: file:vendor/plinth-check-0.1.0.tgz}
+  '@plinth-pages/check@file:vendor/plinth-pages-check-0.1.0.tgz':
+    resolution: {integrity: sha512-BPVw2wfFzgwZYVnREcquteLZrV9b6XcXcdBFI18hao8mxWdZjYPZjwCY76LRuP7vBEh5Gl/znaiIWRZ0/WwBiw==, tarball: file:vendor/plinth-pages-check-0.1.0.tgz}
     version: 0.1.0
     hasBin: true
     peerDependencies:
-      '@plinth/core': ^0.1.0
+      '@plinth-pages/core': ^0.1.0
 
-  '@plinth/core@file:vendor/plinth-core-0.1.0.tgz':
-    resolution: {integrity: sha512-kC/Tq2QHz3oVR2HoSAcYDZshQVU4vzjgdEYqQRkVdX7OoVjfb6gp8CyN5EFmrfCXcB+t5Bgk60FryQEfylnvcA==, tarball: file:vendor/plinth-core-0.1.0.tgz}
+  '@plinth-pages/core@file:vendor/plinth-pages-core-0.1.0.tgz':
+    resolution: {integrity: sha512-hP/5KAOVF/SORn3QLsz56iXzM4xOKC//Xv75hwMyLwJnbwHUJdpHCjfJ7bN3UAtC+vK20FFbap21D1pd1k5UyA==, tarball: file:vendor/plinth-pages-core-0.1.0.tgz}
     version: 0.1.0
     peerDependencies:
       react: '>=18'
@@ -2137,12 +2137,12 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@plinth/check@file:vendor/plinth-check-0.1.0.tgz(@plinth/core@file:vendor/plinth-core-0.1.0.tgz(react@19.1.0))':
+  '@plinth-pages/check@file:vendor/plinth-pages-check-0.1.0.tgz(@plinth-pages/core@file:vendor/plinth-pages-core-0.1.0.tgz(react@19.1.0))':
     dependencies:
-      '@plinth/core': file:vendor/plinth-core-0.1.0.tgz(react@19.1.0)
+      '@plinth-pages/core': file:vendor/plinth-pages-core-0.1.0.tgz(react@19.1.0)
       ts-morph: 26.0.0
 
-  '@plinth/core@file:vendor/plinth-core-0.1.0.tgz(react@19.1.0)':
+  '@plinth-pages/core@file:vendor/plinth-pages-core-0.1.0.tgz(react@19.1.0)':
     dependencies:
       react: 19.1.0
       zod: 3.25.76

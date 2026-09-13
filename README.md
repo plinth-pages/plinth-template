@@ -38,7 +38,7 @@ pnpm build
 - This repository must be marked as a **GitHub template repository** — portfolios are generated from it.
 - **Never add integration-specific code here.** The codemod's duplicate guard only recognises its own
   markers; a hand-added line plus an injected one breaks every new portfolio.
-- `@plinth/core` and `@plinth/check` are installed from `vendor/*.tgz` until they are published to npm.
+- `@plinth-pages/core` and `@plinth-pages/check` are installed from `vendor/*.tgz` until they are published to npm.
   After publishing, replace the `file:` specifiers in `package.json` with versions and delete `vendor/`.
 - `vercel.json` disables deployments from the `draft` branch. Confirm the key against Vercel's current
   project configuration before Phase 6 (verification gate G3).

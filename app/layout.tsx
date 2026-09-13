@@ -1,4 +1,4 @@
-import { Slot } from "@plinth/core";
+import { Slot } from "@plinth-pages/core";
 // plinth:imports:start
 // plinth:imports:end
 import type { Metadata } from "next";
