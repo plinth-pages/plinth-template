@@ -30,5 +30,8 @@
     "@plinth-pages/check": "file:vendor/plinth-pages-check-0.1.0.tgz",
     "prettier": "^3.6.0"
   },
-  "packageManager": "pnpm@9.15.9"
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=22"
+  }
 }
